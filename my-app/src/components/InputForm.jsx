@@ -22,7 +22,7 @@ export default function InputForm(
             </select>
 
             <button onClick={onSubmit} disabled={isLoading}>
-                {setIsLoading ? "Loading..." : "Submit"}
+                {setIsLoading ? "Submit" : "Loading..."}
             </button>
         </div>
     );

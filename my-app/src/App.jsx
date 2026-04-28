@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import InputForm from './components/InputForm'
 import SOPoutput from './components/SOPoutput'
+import { genSOP } from './components/genSOP'
 
 function App() {
   const [description, setDescription] = useState("")
@@ -10,9 +11,11 @@ function App() {
   const [sopOutput, setSopOutput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   
-  function HandleSubmit() {
+  async function HandleSubmit() {
     setIsLoading(true)
-    // API call
+    const response = await genSOP(category,description,type)
+    setSopOutput(response)
+    setIsLoading(false)
     console.log(description, category, type)
   }
   
