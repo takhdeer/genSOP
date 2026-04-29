@@ -39,6 +39,9 @@ function App() {
         sopOutput={sopOutput}
         isLoading={isLoading}
       />
+      <button onClick={() => navigator.clipboard.writeText(sopOutput)}>
+        Copy to Clipboard
+      </button>
     </div>
   );
 }
